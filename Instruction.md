@@ -4,7 +4,7 @@
  * @Author: Evildoer98
  * @Date: 2021-10-22 21:45:48
  * @LastEditors: Evildoer98
- * @LastEditTime: 2021-10-23 16:58:19
+ * @LastEditTime: 2021-10-23 20:19:40
 -->
 
 1. 安装
@@ -36,8 +36,8 @@
         yarn dev:weapp
         yarn build:weapp
     2. npm script
-        npm dev:weapp
-        npm build:weapp
+        npm run dev:weapp
+        npm run build:weapp
     3. 仅限全局安装
         taro build --type weapp --watch
         taro build --type weapp
