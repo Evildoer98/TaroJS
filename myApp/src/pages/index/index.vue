@@ -4,13 +4,17 @@
  * @Author: Evildoer98
  * @Date: 2021-10-23 15:45:42
  * @LastEditors: Evildoer98
- * @LastEditTime: 2021-10-23 19:29:42
+ * @LastEditTime: 2021-10-23 20:16:30
 -->
 <template>
   <view class="index">
     <!-- <NumberDisplay/>
     <NumberSubmit/> -->
     <text>{{msg}}</text>
+    <button @tap="increment">+1</button>
+    <view>existCount: {{existCount}}</view>
+    <view>新增{{count}}</view>
+    <view>total: {{total}}</view>
   </view>
 </template>
 
@@ -18,20 +22,36 @@
 // import NumberDisplay from '../../components/NumberDisplay.vue'
 // import NumberSubmit from '../../components/NumberSubmit.vue'
 
-import {ref} from 'vue'
+import {ref, computed, onMounted, toRefs, watch} from 'vue'
 export default {
   // name: 'Index',
   // components: {
   //   NumberDisplay,
   //   NumberSubmit
   // }
-
-  setup () {
+  name: 'case',
+  setup (props) {
     const msg = ref('My Demo')
+    const count = ref(0)
+    const existCount = ref(2)
+
+    const total = computed (() => count.value + existCount.value)
+
+    function increment () {
+      count.value++
+    }
+
+    onMounted(() => {
+      console.log('computed mounted');
+    })
     return {
-      msg
+      increment,
+      existCount,
+      total,
+      count
     }
   }
+
 
 }
 </script>
