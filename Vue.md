@@ -4,7 +4,7 @@
  * @Author: Evildoer98
  * @Date: 2021-10-23 17:08:03
  * @LastEditors: Evildoer98
- * @LastEditTime: 2021-10-23 17:59:37
+ * @LastEditTime: 2021-10-23 19:15:16
 -->
 
 # 入口组件和页面组件
@@ -101,3 +101,45 @@
         </script>
 
     ```
+
+
+# 增加代码片段
+* user Snippets 输入 wev3 快速生成
+
+```json
+    {
+        // tarojs weapp-Vue3 template 
+        "PrintWeappVue3 to console" : {
+            "prefix": "wev3",
+            "body": [
+                "<template>",
+                "\t<view>",
+                "\t",
+                "\t</view>",
+                "</template>",
+                "<script>",
+                    "export default {",
+                        "\tmounted () {",
+                        "\n\t},",
+                        "\tonLoad () {",
+                        "\n\t},",
+                        "\tonReady () {",
+                        "\n\t},",
+                        "\tonShow () {",
+                        "\n\t},",
+                        "\tonHide () {",
+                        "\n\t},",
+                        "\tonPullDownRefresh () {",
+                        "\n\t},",
+                        "\tsetup() {",
+                        "\n\t},",
+                    "\n}",
+                "</script>",
+                "<style>",
+                "\t",
+                "</style>"
+            ]
+        }
+    }
+
+```
