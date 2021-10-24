@@ -1,68 +1,71 @@
-<!--
- * @Descripttion:
- * @version:
- * @Author: Evildoer98
- * @Date: 2021-10-23 15:45:42
- * @LastEditors: Evildoer98
- * @LastEditTime: 2021-10-23 20:16:30
--->
 <template>
   <view class="index">
-    <!-- <NumberDisplay/>
-    <NumberSubmit/> -->
-    <text>{{msg}}</text>
-    <button @tap="increment">+1</button>
-    <view>existCount: {{existCount}}</view>
-    <view>新增{{count}}</view>
-    <view>total: {{total}}</view>
+    <view class="h3">
+      composition API:
+    </view>
+    <Case1 />
+
+    <view class="h3">
+      Teleport:
+    </view>
+    <Toast :user = username />
+    <view id="teleportToast"></view>
+
+    <view class="h3">
+      setup语法糖:
+    </view>
+    <Setup msg="hello"/>
+
+    <view class="h3">
+      style-vars语法糖:
+    </view>
+    <Styledemo :color = color @tap="changeColor"/>
   </view>
 </template>
 
 <script>
-// import NumberDisplay from '../../components/NumberDisplay.vue'
-// import NumberSubmit from '../../components/NumberSubmit.vue'
+import { ref, computed, onMounted, toRefs, watch } from 'vue'
 
-import {ref, computed, onMounted, toRefs, watch} from 'vue'
+import Case1 from "../../components/case1.vue"
+import Toast from "../../components/Toast.vue"
+import Styledemo from "../../components/styledemo.vue"
+import Setup from "../../components/setup.vue"
+
 export default {
-  // name: 'Index',
-  // components: {
-  //   NumberDisplay,
-  //   NumberSubmit
-  // }
-  name: 'case',
-  setup (props) {
-    const msg = ref('My Demo')
+  components:{
+    Case1,
+    Toast,
+    Styledemo,
+    Setup,
+  },
+  setup () {
+    const msg = ref('Hello Vue3')
+    const username = ref('user1')
     const count = ref(0)
-    const existCount = ref(2)
-
-    const total = computed (() => count.value + existCount.value)
-
-    function increment () {
-      count.value++
+    const color = ref('blue')
+    const changeColor = ()=>{
+      color.value = 'red'
     }
 
-    onMounted(() => {
-      console.log('computed mounted');
-    })
     return {
-      increment,
-      existCount,
-      total,
-      count
+      username,
+      msg,
+      changeColor,
+      color,
     }
+  },
+  onReady () {
+    console.log('onReady')
   }
-
-
 }
 </script>
-
-<style>
-.index {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #000;
-  margin-top: 60px;
+<style lang="scss">
+.index{
+  padding: 20px;
+  .h3 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 40px 0 0;
+  }
 }
 </style>
