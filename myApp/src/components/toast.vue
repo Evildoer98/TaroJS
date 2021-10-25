@@ -4,17 +4,17 @@
  * @Author: Evildoer98
  * @Date: 2021-10-24 14:29:03
  * @LastEditors: Evildoer98
- * @LastEditTime: 2021-10-24 17:28:23
+ * @LastEditTime: 2021-10-25 14:30:57
 -->
 <template>
   <button @tap="showToast" class="btn">打开弹窗</button>
   <!-- to 和 index 中的 view id一致 -->
-  <teleport to="#teleportToast">
+  <!-- <teleport to="#teleportToast">
     <view v-if="toastFlag" class="toast__wrap"  @tap="hideToast">
       <view class="h2">弹窗标题：</view>
       <view class="toast__wrap--msg">欢迎{{ user }}，点击关闭</view>
     </view>
-  </teleport>
+  </teleport> -->
 </template>
 <style lang="scss">
 .toast__wrap{

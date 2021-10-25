@@ -1,3 +1,11 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: Evildoer98
+ * @Date: 2021-10-23 15:45:42
+ * @LastEditors: Evildoer98
+ * @LastEditTime: 2021-10-25 14:31:09
+-->
 <template>
   <view class="index">
     <view class="h3">
@@ -27,7 +35,7 @@
 import { ref, computed, onMounted, toRefs, watch } from 'vue'
 
 import Case1 from "../../components/case1.vue"
-import Toast from "../../components/Toast.vue"
+import Toast from "../../components/toast.vue"
 import Styledemo from "../../components/styledemo.vue"
 import Setup from "../../components/setup.vue"
 
